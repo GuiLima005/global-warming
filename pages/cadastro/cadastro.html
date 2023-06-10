@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/pages/cadastro/css/tablet.css">
     <script src="/pages/cadastro/js/rotas.js" defer></script>
     <script src="./js/script.js" defer type="module"></script>
+    <script src="./js/funcionarios.js" defer type="module"></script>
 
     <!-- excluir -->
     <link rel="stylesheet" href="/pages/cadastro/css/excluir.css">
@@ -61,7 +62,7 @@
         <div class="box">
 
             <div class="box-header" id="div-menu">
-                <!-- <a href="#" id="opcao3" onclick="mostrarDiv(3)">Lista de Funcionários</a> -->
+                <a href="#" id="opcao3" onclick="mostrarDiv(3)">Lista de Funcionários</a>
                 <a href="#" id="opcao2" onclick="mostrarDiv(2)">Novo Cadastro</a>
                 <a href="#" id="opcao1" onclick="mostrarDiv(1)">Excluir Cadastro</a>
               </div>              
@@ -87,13 +88,13 @@
                             <small>Mensagem de erro</small>
                         </div>
 
-                        <div class="form-control-excluir-funcionario">
+                        <!-- <div class="form-control-excluir-funcionario">
                             <label for="password">Senha</label>
                             <input type="password" id="password-excluir" placeholder="Digite a senha do funcionário" />
                             <i class="fas fa-exclamation-circle"></i>
                             <i class="fas fa-check-circle"></i>
                             <small>Mensagem de erro</small>
-                        </div>
+                        </div> -->
 
                         <div class="form-image-excluir-funcionario">
                             <button id="button-excluir" type="button">Excluir</button>
@@ -106,7 +107,7 @@
                     <form id="form-criar" class="form validate-form">
                         <div class="form-control-criar-funcionario">
                             <label for="username">Nome</label>
-                            <input type="text" id="username-criar" placeholder="Digite o nome do funcionário" />
+                            <input type="text" id="username-criar" placeholder="Digite o nome do funcionário" maxlength="28"/>
                             <i class="fas fa-exclamation-circle"></i>
                             <i class="fas fa-check-circle"></i>
                             <small id="error-message-criar">Mensagem de erro</small>
@@ -138,6 +139,35 @@
                     </form>
 
                 </div>
+
+                 <!-- Lista de Funcionario -->
+                 <div class="container-funcionario div-menu" id="div3">
+
+                    <div class="box-descricao">
+                        <p>Nome</p>
+                        <p>Email</p>
+                    </div>
+
+                    <div class="box-funcionario">
+
+                        <!-- <div class="funcionario">
+                            <div class="informacoes">
+                                <p>Guilherme</p>
+                                <p>Guilherme@gmail.com</p>
+                            </div>
+                            <div class="linha"></div>
+                        </div>
+
+
+                        <div class="funcionario">
+                            <div class="informacoes">
+                                <p>Guilherme</p>
+                                <p>Guilherme@gmail.com</p>
+                            </div>
+                            <div class="linha"></div>
+                        </div> -->
+
+                    </div>
 
             </div>
 
