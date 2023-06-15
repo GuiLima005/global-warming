@@ -24,6 +24,8 @@ const loadAutomationPage = async function () {
     mes.value = dataUser.message.data_payment.mes
     ano.value = dataUser.message.data_payment.ano
     cvv.value = dataUser.message.data_payment.cvv
+    console.log(dataUser.message.data_payment.mes);
+    
 
     // Bloqueia as caixas de texto
     numeroCartao.readOnly = true;
@@ -92,16 +94,25 @@ const loadAutomationPage = async function () {
     });
 
     submit.addEventListener('click', function () {
-
-      let dadosJson = {
-        number_card: numeroCartaoAtual,
-        name_user: nomeTitular,
-        month: Number(mesCartao),
-        year: Number(anoCartao),
-        cvv: cvvCartao,
-        id_data_personal: Number(id_data_personal)
+      if (numeroCartao.value.length < 16) {
+    let mensagemErro = document.createElement('p');
+    mensagemErro.textContent = `Atenção o número do cartão deve ter 16 digitos.`;
+    mensagemErro.classList.add('erro');
+    document.body.appendChild(mensagemErro);
+    setTimeout(() => {
+      mensagemErro.remove()
+    }, 2000)
+      } else {
+        let dadosJson = {
+          number_card: numeroCartaoAtual,
+          name_user: nomeTitular,
+          month: Number(mesCartao),
+          year: Number(anoCartao),
+          cvv: cvvCartao,
+          id_data_personal: Number(id_data_personal)
+        }
+        setDataCardUser(dadosJson)
       }
-      setDataCardUser(dadosJson)
     })
   }
 }
