@@ -44,7 +44,7 @@ const loadAutomationPage = async function () {
         setTimeout(() => {
           mensagemSucesso.remove();
           location.reload()
-        }, 5000);
+        }, 3000);
       } else {
         let mensagemErro = document.createElement('p');
         mensagemErro.textContent = `Atenção ${nomeTitularCartao.value} verifique as informações e tente novamente.`;
@@ -52,7 +52,7 @@ const loadAutomationPage = async function () {
         document.body.appendChild(mensagemErro);
         setTimeout(() => {
           mensagemErro.remove()
-        }, 5000)
+        }, 3000)
       }
     }
     const submit = document.querySelector('#submitButton');
@@ -116,7 +116,7 @@ const setDataDonation = async function (dadosJson) {
     document.body.appendChild(mensagemSucesso);
     setTimeout(() => {
       mensagemSucesso.remove();
-    }, 4000); // Remover a mensagem após 3 segundos (3000 milissegundos)
+    }, 3000); // Remover a mensagem após 3 segundos (3000 milissegundos)
   } else {
     let mensagemErro = document.createElement('p');
     mensagemErro.textContent = `Atenção ${nomeTitularCartao.value} verifique as informações e tente novamente.`;
@@ -124,7 +124,7 @@ const setDataDonation = async function (dadosJson) {
     document.body.appendChild(mensagemErro);
     setTimeout(() => {
       mensagemErro.remove()
-    }, 5000)
+    }, 3000)
   }
 }
 
